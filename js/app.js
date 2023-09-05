@@ -13,6 +13,7 @@ const minutes = "00";
 let ratioText, timerText;
 let ratio;
 let timeLeft;
+let shuffledArray;
 let roundQuoteArr = [];
 const arr = getRandomQuote();
 // console.log(arr)
@@ -99,19 +100,28 @@ function updateRatio() {
   // console.log(ratioContainer.textContent)
 }
 
-function renderQuote() {
+function shuffleArray() {
   // Implementing a Fisher-Yates Sorting Algorithm
-  const shuffle = (arr) => {
-    for(let i = arr.length - 1; i > 0; i--) {
+  // to shuffle the initial array of 50+ elements
+  const shuffle = (array) => {
+    for(let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+      [array[i], array[j]] = [array[j], array[i]];
     }
+    return array;
   };
-  let shuffledArray = [];
   shuffledArray = shuffle(arr);
-  return  console.log(shuffledArray);
+  return shuffledArray;
 }
-renderQuote();
+shuffleArray(); // works
+
+function renderquote() {
+  // Create an array of 10 elements for each round
+  
+  // Display a quote to the player in the quote container for each round
+
+
+}
 
 function updatePlayBtn() {
 
