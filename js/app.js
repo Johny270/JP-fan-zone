@@ -49,6 +49,8 @@ submitBtn.addEventListener("click", updateRatio)
 
 
 /*------------ Functions ------------*/
+start();
+
 function start() {
   // Change play button text to reset and body color from green to red
 

@@ -253,7 +253,67 @@ const quotesArr = [
     characterName: "Kaneki ken",
     quote: "human relationships are chemical ractions. If you have a reaction then you can never return back to your previous state of being.",
     animeTitle: "Tokyo Ghoul"
-  }
+  },
+  {
+    characterName: "Shoya Ishida",
+    quote: "I'm not a good person. But even I can change. Even I can learn how to love.",
+    animeTitle: "A silent Voice"
+  },
+  {
+    characterName: "Shoya Ishida",
+    quote: "Don't look away from me. Please, just once, look at me.",
+    animeTitle: "A silent Voice"
+  },
+  {
+    characterName: "Shoya Ishida",
+    quote: "Starting tomorrow, I'll look everyone in the eye. Starting tomorrow, I'll listen when people speak to me. Starting tomorrow, I'll be better.",
+    animeTitle: "A silent Voice"
+  },
+  {
+    characterName: "Kenshiro",
+    quote: "You are as good as dead, and buried. But you don't know it yet.",
+    animeTitle: "Hokuto No Ken"
+  },
+  {
+    characterName: "Izuku Midoriya",
+    quote: "My motivation might seem trivial compared to yours, but I can't lose, either.  I have to live up to the hopes of those who supported me.",
+    animeTitle: "My Hero Academia"
+  },
+  {
+    characterName: "All Might",
+    quote: "If you feel yourself hitting up against your limit, remember for what cause you clench your fists! Remember why you started down this path, and let that memory carry you beyond your limit",
+    animeTitle: "My Hero Academia"
+  },
+  {
+    characterName: "Shigaraki Tomura",
+    quote: "Heroes and villains both thrive on violence, but we're still categorized. “You're good” “Youre evil”. That's how it is! Symbol of peace? Hah! In the end you're just a tool for violence, made to keep us down. And violence only breeds more violence.",
+    animeTitle: "My Hero Academia"
+  },
+  {
+    characterName: "Lelouch VI Britannia",
+    quote: "If the king doesnt move, then his subjects wont follow.",
+    animeTitle: "Code Geass"
+  },
+  {
+    characterName: "Lelouch VI Britannia",
+    quote: "All the hatred in the world is gathered on me, as promised. So, all you have to do is to erase my existence, and put an end to this chain of hatred. The Black Knights will have the legend of Zero left behind for them. And now the world can be unified at one table, not through military force, but through negotiation and talk.",
+    animeTitle: "Code Geass"
+  },
+  {
+    characterName: "Ougai Mori",
+    quote: "We are not defined by our abilities, but by how we choose to use them.",
+    animeTitle: "Bungou Stray Dogs"
+  },
+  {
+    characterName: "Kazuya Hiramaru",
+    quote: "Why do people have to work? I just want to eat and sleep. I should have born as a panda at the zoo.",
+    animeTitle: "Bakuman"
+  },
+  {
+    characterName: "Parona",
+    quote: "I’m not tough enough to go on living with this reality.",
+    animeTitle: "To Your Eternity"
+  },
 ]
 
 
