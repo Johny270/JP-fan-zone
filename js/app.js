@@ -20,6 +20,7 @@ let quote= [];
 let quoteText;
 let answers = []; // to store all user's answers for a round of 10 questions
 let answer; // to store user's answer for the current question
+let counter; // max value must be 10.
 
 // console.log(arr)
 
@@ -44,7 +45,7 @@ const quoteContainer = document.querySelector("#quotes-placeholder");
 
 /*------------ Event listeners ------------*/
 playBtn.addEventListener("click", displaytimer);
-submitBtn.addEventListener("click", updateRatio)
+submitBtn.addEventListener("click", updateCounter);
 
 
 
@@ -54,8 +55,9 @@ start();
 function start() {
   // Change play button text to reset and body color from green to red
 
-  // initialize ratio to 1
-  ratio = 1;
+  // initialize ratio to 1\
+  counter = 1
+  ratio = 0;
   // reset timer to 20 seconds
   timeLeft = 20;
   // reset right/wrong ratio
@@ -76,6 +78,9 @@ function start() {
 
 function render() {
   // render game state
+  displaytimer();
+  updateCounter();
+  renderQuote();
 }
 
 function displaytimer() {
@@ -94,14 +99,9 @@ function displaytimer() {
 
 }
 
-function updateRatio() {
+function updateCounter() {
   // Increment ratio by one each time the submit button gets clicked
-  ratio++;
-
-  // Imcrement ratio by One each time the timer hits 0
-  if(timeLeft < 0) {
-    ratio++;
-  }
+  counter++;
   // display updated ratio to the screen
   ratioContainer.innerHTML = `${ratio} / ${totalQuestions}`;
 
@@ -152,8 +152,7 @@ function validateAnswer() {
   // compare text value of the variable to text value of the current quote name of the character who said it
   // And increment counter by one if strings match, else leave it as is, for the the next round
   if(answer === quote.characterName.toLowerCase()) {
-    console.log("Increment the ratio");
-    // ratio++;
+    ratio++;
   }
   // clear variable for the next round
   answer = "";
@@ -161,7 +160,10 @@ function validateAnswer() {
 validateAnswer();
 
 function clearRound() {
-   
+  // clear input field and quotes container if timer hits 0 or submitBtn is clicked
+  userAns.textContent = "";
+  quoteContainer.textContent = ""
+  userAns.focus();
 }
 
 // console.log(renderQuote());
@@ -171,7 +173,21 @@ function updatePlayBtn() {
 }
 
 function submit() {
-  updateRatio();
+  validateAnswer();
+  clearRound();
+  updateCounter();
+  render();
+}
+
+function submitAtTimer0() { 
+  //Increment counter when timer hits zero
+  updateCounter();
+  // submit answer anyway if timer hits 0
+  if(timer < 20) submit();
+}
+
+function endGame() {
+  // end game when question counter hits 10
 }
 
 // function reset() {
