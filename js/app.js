@@ -18,6 +18,8 @@ let shuffledArray;
 let roundQuoteArr = [];
 let quote= [];
 let quoteText;
+let answers = []; // to store all user's answers for a round of 10 questions
+let answer; // to store user's answer for the current question
 
 // console.log(arr)
 
@@ -138,7 +140,23 @@ renderQuote();
 
 function validateAnswer() {
 
+  /*-------------- This function works ---------------*/
+
+  //userAns.textContent = "Natsu Dragneel";
+  // store the text value within the input field in a variable
+  answer = userAns.textContent.toLowerCase();
+  // push string value of variable to an array of answers for the current round of 10
+  answers.push(answer);
+  // compare text value of the variable to text value of the current quote name of the character who said it
+  // And increment counter by one if strings match, else leave it as is, for the the next round
+  if(answer === quote.characterName.toLowerCase()) {
+    console.log("Increment the ratio");
+    // ratio++;
+  }
+  // clear variable for the next round
+  answer = "";
 }
+validateAnswer();
 
 function clearRound() {
    

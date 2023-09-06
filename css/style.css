@@ -111,10 +111,20 @@ h2{
 }
 
 #quotes-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 3px solid white;
   width: 705px;
   height: 251px;
   margin-top: 28px;
+  text-align: center;
+  font-family: "Jacques Francois", serif;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40 px;
+
 }
 
 #user-input {
