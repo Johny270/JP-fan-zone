@@ -2,6 +2,7 @@ import { getRandomQuote } from "./quotes.js";
 
 /*------------ Constants ------------*/
 // const roundQuoteArr = getRandomQuote();
+const arr = getRandomQuote();
 const totalQuestions = 10;
 const minutes = "00";
 
@@ -15,7 +16,9 @@ let ratio;
 let timeLeft;
 let shuffledArray;
 let roundQuoteArr = [];
-const arr = getRandomQuote();
+let quote= [];
+let quoteText;
+
 // console.log(arr)
 
 
@@ -31,6 +34,8 @@ const ratioContainer = document.querySelector("#ratio-container");
 //console.log(ratioContainer); -- works
 const submitBtn = document.querySelector("#submit-btn");
 //console.log(submitBtn); -- works
+const quoteContainer = document.querySelector("#quotes-placeholder");
+// console.log(quoteContainer); -- works
 
 
 
@@ -58,6 +63,11 @@ function start() {
   // Clear input field and put focus in it
 
   // render game state to the player
+    // render timer
+
+    // render ratio
+
+    // render quote
 }
 
 function render() {
@@ -81,23 +91,18 @@ function displaytimer() {
 }
 
 function updateRatio() {
-  ratio = 1;
   // Increment ratio by one each time the submit button gets clicked
   ratio++;
 
   // Imcrement ratio by One each time the timer hits 0
-
-
-  //ratioContainer.style.color = "black";
-
+  if(timeLeft < 0) {
+    ratio++;
+  }
   // display updated ratio to the screen
   ratioContainer.innerHTML = `${ratio} / ${totalQuestions}`;
 
   // Store the current value of ratio for next round
 
-
-  // console.log("submit was clicked!")
-  // console.log(ratioContainer.textContent)
 }
 
 function shuffleArray() {
@@ -115,20 +120,38 @@ function shuffleArray() {
 }
 shuffleArray(); // works
 
-function renderquote() {
-  // Create an array of 10 elements for each round
-  
-  // Display a quote to the player in the quote container for each round
+function renderQuote() {
+  // Create an array of 10 random elements for each round
+  // can just return the 10 first elements of the intitial array since they are already shuffled
+  roundQuoteArr = shuffledArray.slice(0, 10);
+  // console.log(roundQuoteArr); --  works
+  // randomly pick a quote for the current hand
+  quote = roundQuoteArr[Math.floor(Math.random() * roundQuoteArr.length)];
+  console.log(quote);
+  // capture only the text of the quote to render to the user
+  quoteText = quote.quote;
+  // console.log(quoteText) -- works
+  // Finally, render quote to the quote container
+  quoteContainer.textContent = quoteText;
+}
+renderQuote();
 
+function validateAnswer() {
 
 }
+
+function clearRound() {
+   
+}
+
+// console.log(renderQuote());
 
 function updatePlayBtn() {
 
 }
 
 function submit() {
-
+  updateRatio();
 }
 
 // function reset() {
