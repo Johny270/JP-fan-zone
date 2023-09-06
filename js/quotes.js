@@ -291,7 +291,7 @@ const quotesArr = [
   },
   {
     characterName: "Lelouch VI Britannia",
-    quote: "If the king doesnt move, then his subjects wont follow.",
+    quote: "If the king doesnt move, then his subjects won't follow.",
     animeTitle: "Code Geass"
   },
   {

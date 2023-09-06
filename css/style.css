@@ -148,7 +148,7 @@ h2{
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
   font-family: "Jacques Francois", serif;
 }
 

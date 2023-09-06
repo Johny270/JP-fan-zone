@@ -19,7 +19,6 @@ let roundQuoteArr = [];
 let quote= [];
 let quoteText;
 let answers = []; // to store all user's answers for a round of 10 questions
-let answer; // to store user's answer for the current question
 let counter; // max value must be 10.
 
 // console.log(arr)
@@ -27,7 +26,7 @@ let counter; // max value must be 10.
 
 
 /*------------ Cached Element References ------------*/
-const userAns = document.querySelector("#user-input");
+let userAns = document.querySelector("#user-input");
 // console.log(userAns); -- Works
 const playBtn = document.querySelector("#play-btn");
 //console.log(playBtn); -- works
@@ -51,7 +50,7 @@ submitBtn.addEventListener("click", submit);
 
 
 /*------------ Functions ------------*/
-
+userAns.value = "";
 function start() {
   // Change play button text to reset and body color from green to red
 
@@ -59,7 +58,7 @@ function start() {
   counter = 0;
   ratio = 0;
   // reset timer to 20 seconds
-  timeLeft = 20;
+
   // reset right/wrong ratio
  
   // display random quote in quotes placeholder
@@ -67,7 +66,7 @@ function start() {
   // disable the submit button
 
   // Clear input field and put focus in it
-  userAns.textContent = "";
+  userAns.value = "";
   userAns.focus();
   // render game state to the player
     // render timer
@@ -128,7 +127,7 @@ function shuffleArray() {
   shuffledArray = shuffle(arr);
   return shuffledArray;
 }
-// shuffleArray(); -- works
+shuffleArray(); // -- works
 
 function renderQuote() {
   // Create an array of 10 random elements for each round
@@ -144,31 +143,35 @@ function renderQuote() {
   // Finally, render quote to the quote container
   quoteContainer.textContent = quoteText;
 }
-// renderQuote(); -- works
+renderQuote(); //-- works
 
 function validateAnswer() {
 
   /*-------------- This function works ---------------*/
 
-  //userAns.textContent = "Natsu Dragneel";
-  // store the text value within the input field in a variable
-  answer = userAns.textContent.toLowerCase();
-  // push string value of variable to an array of answers for the current round of 10
-  answers.push(answer);
-  // compare text value of the variable to text value of the current quote name of the character who said it
-  // And increment counter by one if strings match, else leave it as is, for the the next round
-  if(answer === quote.characterName.toLowerCase()) {
-    ratio++;
+  // make sure the answers array is not populated with empty strings
+  if(userAns.value != "") {
+    answers.push(userAns.value);
   }
-  // clear variable for the next round
-  answer = "";
+  
+  // Loop over answers and check if there's a value that matches current quote characterName
+  // If yes meaning the user answer is right, increment ratio by 1.
+  for(let i = 0; i < answers.length; i++) {
+    if (answers[i] === quote.characterName) {
+      console.log(answers[i])
+      ratio++;
+    }
+    // ratio--;
+    ratioContainer.textContent = `${ratio} / ${totalQuestions}`;
+  }
+
 }
-// validateAnswer();
+validateAnswer();
 
 function clearRound() {
   // clear input field and quotes container if timer hits 0 or submitBtn is clicked
-  userAns.textContent = "";
-  quoteContainer.textContent = ""
+  userAns.value = "";
+  quoteContainer.textContent = "";
   userAns.focus();
 }
 
@@ -198,4 +201,4 @@ function endGame() {
 // function reset() {
 //   start();
 // }
-console.log(answers);
+// console.log(answers);
