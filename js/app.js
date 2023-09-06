@@ -39,7 +39,7 @@ const submitBtn = document.querySelector("#submit-btn");
 //console.log(submitBtn); -- works
 const quoteContainer = document.querySelector("#quotes-placeholder");
 // console.log(quoteContainer); -- works
-const ratioContainer = document.querySelector("#ratio-container")
+const ratioContainer = document.querySelector("#ratio-container");
 
 
 
@@ -79,6 +79,7 @@ function start() {
 function render() {
   // render game state
   displaytimer();
+  displayRatio();
   updateCounter();
   shuffleArray();
   renderQuote();
@@ -108,6 +109,10 @@ function updateCounter() {
 
   // Store the current value of ratio for next round
 
+}
+
+function displayRatio() {
+  ratioContainer.textContent = `${ratio} / ${totalQuestions}`;
 }
 
 function shuffleArray() {
