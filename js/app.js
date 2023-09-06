@@ -51,7 +51,11 @@ submitBtn.addEventListener("click", submit);
 
 /*------------ Functions ------------*/
 userAns.value = "";
+userAns.disabled = true;
 function start() {
+
+  // activate input field
+  userAns.disabled = false;
   // Change play button text to reset and body color from green to red
 
   // initialize ratio to 1\
@@ -127,7 +131,7 @@ function shuffleArray() {
   shuffledArray = shuffle(arr);
   return shuffledArray;
 }
-shuffleArray(); // -- works
+// shuffleArray(); // -- works
 
 function renderQuote() {
   // Create an array of 10 random elements for each round
@@ -143,17 +147,20 @@ function renderQuote() {
   // Finally, render quote to the quote container
   quoteContainer.textContent = quoteText;
 }
-renderQuote(); //-- works
+// renderQuote(); //-- works
 
 function validateAnswer() {
 
   /*-------------- This function works ---------------*/
 
   // make sure the answers array is not populated with empty strings
-  if(userAns.value != "") {
+  if(userAns.value !== "") {
     answers.push(userAns.value);
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.disabled = true;
   }
-  
+
   // Loop over answers and check if there's a value that matches current quote characterName
   // If yes meaning the user answer is right, increment ratio by 1.
   for(let i = 0; i < answers.length; i++) {
@@ -166,7 +173,7 @@ function validateAnswer() {
   }
 
 }
-validateAnswer();
+// validateAnswer();
 
 function clearRound() {
   // clear input field and quotes container if timer hits 0 or submitBtn is clicked
@@ -187,6 +194,7 @@ function submit() {
   render();
 }
 
+
 function submitAtTimer0() { 
   //Increment counter when timer hits zero
   updateCounter();
@@ -195,7 +203,7 @@ function submitAtTimer0() {
 }
 
 function endGame() {
-  // end game when question counter hits 10
+  // end current round if ratio == totalQuestions
 }
 
 // function reset() {
