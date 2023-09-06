@@ -11,7 +11,7 @@ const minutes = "00";
 
 
 /*------------ Variables ------------*/
-let ratioText, timerText;
+// let ratioText, timerText;
 let ratio;
 let timeLeft;
 let shuffledArray;
@@ -33,53 +33,54 @@ const playBtn = document.querySelector("#play-btn");
 //console.log(playBtn); -- works
 const timerContainer = document.querySelector("#timer-container");
 //console.log(timerContainer); -- works
-const ratioContainer = document.querySelector("#ratio-container");
-//console.log(ratioContainer); -- works
+const counterEl = document.querySelector("#counter");
+//console.log counterEl); -- works
 const submitBtn = document.querySelector("#submit-btn");
 //console.log(submitBtn); -- works
 const quoteContainer = document.querySelector("#quotes-placeholder");
 // console.log(quoteContainer); -- works
+const ratioContainer = document.querySelector("#ratio-container")
 
 
 
 
 /*------------ Event listeners ------------*/
-playBtn.addEventListener("click", displaytimer);
-submitBtn.addEventListener("click", updateCounter);
+playBtn.addEventListener("click", start);
+submitBtn.addEventListener("click", submit);
 
 
 
 /*------------ Functions ------------*/
-start();
 
 function start() {
   // Change play button text to reset and body color from green to red
 
   // initialize ratio to 1\
-  counter = 1
+  counter = 0;
   ratio = 0;
   // reset timer to 20 seconds
   timeLeft = 20;
   // reset right/wrong ratio
-
+ 
   // display random quote in quotes placeholder
 
   // disable the submit button
 
   // Clear input field and put focus in it
-
+  userAns.textContent = "";
+  userAns.focus();
   // render game state to the player
     // render timer
-
     // render ratio
-
     // render quote
+    render();
 }
 
 function render() {
   // render game state
   displaytimer();
   updateCounter();
+  shuffleArray();
   renderQuote();
 }
 
@@ -103,7 +104,7 @@ function updateCounter() {
   // Increment ratio by one each time the submit button gets clicked
   counter++;
   // display updated ratio to the screen
-  ratioContainer.innerHTML = `${ratio} / ${totalQuestions}`;
+ counterEl.textContent = `${counter} / ${totalQuestions}`;
 
   // Store the current value of ratio for next round
 
@@ -122,7 +123,7 @@ function shuffleArray() {
   shuffledArray = shuffle(arr);
   return shuffledArray;
 }
-shuffleArray(); // works
+// shuffleArray(); -- works
 
 function renderQuote() {
   // Create an array of 10 random elements for each round
@@ -138,7 +139,7 @@ function renderQuote() {
   // Finally, render quote to the quote container
   quoteContainer.textContent = quoteText;
 }
-renderQuote();
+// renderQuote(); -- works
 
 function validateAnswer() {
 
@@ -157,7 +158,7 @@ function validateAnswer() {
   // clear variable for the next round
   answer = "";
 }
-validateAnswer();
+// validateAnswer();
 
 function clearRound() {
   // clear input field and quotes container if timer hits 0 or submitBtn is clicked
@@ -175,7 +176,6 @@ function updatePlayBtn() {
 function submit() {
   validateAnswer();
   clearRound();
-  updateCounter();
   render();
 }
 
@@ -183,7 +183,7 @@ function submitAtTimer0() {
   //Increment counter when timer hits zero
   updateCounter();
   // submit answer anyway if timer hits 0
-  if(timer < 20) submit();
+  // if(timer < 20) submit();
 }
 
 function endGame() {
@@ -193,3 +193,4 @@ function endGame() {
 // function reset() {
 //   start();
 // }
+console.log(answers);
