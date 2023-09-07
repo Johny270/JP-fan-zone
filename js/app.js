@@ -20,6 +20,7 @@ let quote= [];
 let quoteText;
 let answers = []; // to store all user's answers for a round of 10 questions
 let counter; // max value must be 10.
+let timer;
 
 // console.log(arr)
 
@@ -46,16 +47,19 @@ const ratioContainer = document.querySelector("#ratio-container");
 /*------------ Event listeners ------------*/
 playBtn.addEventListener("click", start);
 submitBtn.addEventListener("click", submit);
+userAns.addEventListener("input", enableDisable );
 
 
 
 /*------------ Functions ------------*/
 userAns.value = "";
 userAns.disabled = true;
+submitBtn.disabled = true;
 function start() {
-
+  //enableDisable();
   // activate input field
   userAns.disabled = false;
+  submitBtn.disabled = false;
   // Change play button text to reset and body color from green to red
 
   // initialize ratio to 1\
@@ -86,22 +90,24 @@ function render() {
   updateCounter();
   shuffleArray();
   renderQuote();
+  enableDisable();
 }
 
 function displaytimer() {
   timeLeft = 20;
-  let timer = setInterval(function() {
+  timer = setInterval(function() {
     // Display timer in the format 'min : sec' in the timer container
     timerContainer.textContent = minutes + " : " + `${timeLeft}`;
     timeLeft--;
     if(timeLeft < 0) {
       timerContainer.textContent = minutes + " : " + minutes;
+      // clearTimeout(timer)
       clearInterval(timer);
       // submit what's in the input field when timer hits zero
       submitBtn.click();
     }
+    //clearInterval(timer);
   }, 1000);
-
 }
 
 function updateCounter() {
@@ -154,11 +160,8 @@ function validateAnswer() {
   /*-------------- This function works ---------------*/
 
   // make sure the answers array is not populated with empty strings
-  if(userAns.value !== "") {
+  if(userAns.value != "") {
     answers.push(userAns.value);
-    submitBtn.disabled = false;
-  } else {
-    submitBtn.disabled = true;
   }
 
   // Loop over answers and check if there's a value that matches current quote characterName
@@ -192,8 +195,18 @@ function submit() {
   validateAnswer();
   clearRound();
   render();
+  clearInterval(timer);
 }
 
+function enableDisable(){
+  if(userAns.value.trim() === ""){
+    submitBtn.disabled = true;
+  } else {
+    submitBtn.disabled = false;
+  }
+}
+console.log(userAns);
+enableDisable();
 
 function submitAtTimer0() { 
   //Increment counter when timer hits zero
