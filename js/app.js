@@ -103,6 +103,8 @@ function displaytimer() {
       timerContainer.textContent = minutes + " : " + minutes;
       // clearTimeout(timer)
       clearInterval(timer);
+      // enable submit button
+      submitBtn.disabled = false;
       // submit what's in the input field when timer hits zero
       submitBtn.click();
     }
@@ -158,6 +160,9 @@ function renderQuote() {
 function validateAnswer() {
 
   /*-------------- This function works ---------------*/
+
+  // Enable the submit button
+  // submitBtn.disabled = false;
 
   // make sure the answers array is not populated with empty strings
   if(userAns.value != "") {
