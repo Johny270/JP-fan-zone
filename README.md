@@ -1,7 +1,7 @@
 # Japanime Fan Zone !
 ***
 
-JP Fan Zone is an online quiz platform dedicated to everything Japan animation-related. It is the place to go to test how much of a fan you truly are when it comes to Japanimation. The game renders a series of quotes that the player/user must correctly guess who said them to see his/her score increase.
+JP Fan Zone is an online quiz platform dedicated to everything Japan animation-related. It is the place to go to test how much of a fan you truly are when it comes to Japanimation. This game saw the light of the day because of an intention to spray and share japanimation passion between those who feel they belong to such a community. The author of the project himself is a great admirer of the artistry of japanese people when it comes to story-telling, art, and animation. The game renders a series of quotes that the player/user must correctly guess who said them to see his/her score increase.
 
 # Getting Started
 ***
@@ -51,6 +51,9 @@ Enable or Disable Button based on condition using JavaScript ](https://www.aspsn
 
 # Techonologies used
 ***
+- HTML
+- CSS
+- JavaScript
 
 
 

@@ -221,10 +221,32 @@ function submitAtTimer0() {
 }
 
 function endGame() {
-  // end current round if ratio == totalQuestions
+  // end current round if counter == totalQuestions
+
+  // clear the div body container element.
+
+  // create and display a placeholder for the images to render
+
+  // Create and display a placeholder for canvas to draw audio visualizer
+
+  // Create and display a Continue playing button to return back to the game
+
 }
 
-// function reset() {
-//   start();
-// }
-// console.log(answers);
+function continuePlaying() {
+  // happens when user clicks on continue playing button.
+
+  // Clear what is in the div body container
+
+  // Recreate the same structure before the endgame function
+}
+
+function reset() {
+  // Clear counter
+
+  // Clear ratio
+
+  // Clear timer
+
+  // Reinitializes the state of the game
+}
