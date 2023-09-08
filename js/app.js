@@ -127,6 +127,10 @@ function playSound() {
   song.play();
 }
 
+function pauseSound() {
+  song.pause();
+}
+
 function shuffleArray() {
   // Implementing a Fisher-Yates Sorting Algorithm
   // to shuffle the initial array of 50+ elements
@@ -178,7 +182,7 @@ function clearRound() {
 }
 
 function submit() {
-  song.pause();
+  pauseSound();
   clearInterval(timer);
   validateAnswer();
   clearRound();
@@ -194,6 +198,7 @@ function enableDisable(){
 }
 
 function reset() {
+  pauseSound();
   clearInterval(timer);
   counterEl.innerHTML = "";
   ratioContainer.innerHTML = "";
