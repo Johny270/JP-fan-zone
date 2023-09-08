@@ -1,20 +1,23 @@
 import { getRandomQuote } from "./quotes.js";
+import { getSongs } from "./audio.js";
 
 /*------------ Constants ------------*/
 
 const arr = getRandomQuote();
 const totalQuestions = 10;
 const minutes = "00";
+const jpSongs = getSongs();
 
 /*------------ Variables ------------*/
 let ratio;
 let timeLeft;
 let shuffledArray;
 let roundQuoteArr = [];
-let quote= [];
+let quote = [];
 let answers = []; // to store all user's answers for a round of 10 questions
 let counter; // max value must be 10.
 let timer;
+let song;
 
 /*------------ Cached Element References ------------*/
 let userAns = document.querySelector("#user-input");
@@ -68,6 +71,7 @@ function render() {
   updateCounter();
   shuffleArray();
   renderQuote();
+  playSound();
   enableDisable();
   endGame();
 }
@@ -116,6 +120,11 @@ function displayRatio() {
   } else{
     ratioContainer.style.color = "#000000";
   }
+}
+
+function playSound() {
+  song = jpSongs[Math.floor(Math.random() * jpSongs.length)];
+  song.play();
 }
 
 function shuffleArray() {
@@ -169,6 +178,7 @@ function clearRound() {
 }
 
 function submit() {
+  song.pause();
   clearInterval(timer);
   validateAnswer();
   clearRound();
