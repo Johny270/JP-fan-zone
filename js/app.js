@@ -161,14 +161,12 @@ function validateAnswer() {
   if(userAns.value != "") {
     answers.push(userAns.value);
   }
-
   // Loop over answers and check if there's a value that matches current quote characterName
   // If yes meaning the user answer is right, increment ratio by 1.
   for(let i = 0; i < answers.length; i++) {
     if ((answers[i]).toLowerCase() === (quote.characterName).toLowerCase()) {
       ratio++;
     }
-
     // Render result to the user
     ratioContainer.textContent = `${ratio} / ${totalQuestions}`;
   }
@@ -182,6 +180,7 @@ function clearRound() {
 }
 
 function submit() {
+  validateAnswer();
   pauseSound();
   clearInterval(timer);
   validateAnswer();
