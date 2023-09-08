@@ -1,82 +1,60 @@
 import { getRandomQuote } from "./quotes.js";
 
 /*------------ Constants ------------*/
-// const roundQuoteArr = getRandomQuote();
+
 const arr = getRandomQuote();
 const totalQuestions = 10;
 const minutes = "00";
 
-// console.log(roundQuoteArr); -- works
-
-
-
 /*------------ Variables ------------*/
-// let ratioText, timerText;
 let ratio;
 let timeLeft;
 let shuffledArray;
 let roundQuoteArr = [];
 let quote= [];
-let quoteText;
 let answers = []; // to store all user's answers for a round of 10 questions
 let counter; // max value must be 10.
 let timer;
 
-// console.log(arr)
-
-
-
 /*------------ Cached Element References ------------*/
 let userAns = document.querySelector("#user-input");
-// console.log(userAns); -- Works
 const playBtn = document.querySelector("#play-btn");
-//console.log(playBtn); -- works
 const timerContainer = document.querySelector("#timer-container");
-//console.log(timerContainer); -- works
 const counterEl = document.querySelector("#counter");
-//console.log counterEl); -- works
 const submitBtn = document.querySelector("#submit-btn");
-//console.log(submitBtn); -- works
 const quoteContainer = document.querySelector("#quotes-placeholder");
-// console.log(quoteContainer); -- works
 const ratioContainer = document.querySelector("#ratio-container");
-
-
-
+const resetBtn = document.querySelector("#reset-btn");
 
 /*------------ Event listeners ------------*/
 playBtn.addEventListener("click", start);
 submitBtn.addEventListener("click", submit);
 userAns.addEventListener("input", enableDisable );
-
-
+resetBtn.addEventListener("click", reset);
 
 /*------------ Functions ------------*/
 userAns.value = "";
 userAns.disabled = true;
 submitBtn.disabled = true;
+
 function start() {
-  //enableDisable();
-  // activate input field
+
+  quoteContainer.style.color = "#ffffff";
+  resetBtn.disabled = false;
+
+  // activate input field and disable submitBtn
   userAns.disabled = false;
   submitBtn.disabled = false;
-  // Change play button text to reset and body color from green to red
 
-  // initialize ratio to 1\
+  // initialize ratio to 0 and counter to 0
   counter = 0;
   ratio = 0;
-  // reset timer to 20 seconds
-
-  // reset right/wrong ratio
- 
-  // display random quote in quotes placeholder
-
-  // disable the submit button
 
   // Clear input field and put focus in it
   userAns.value = "";
   userAns.focus();
   // render game state to the player
+    // render counter
     // render timer
     // render ratio
     // render quote
@@ -85,15 +63,17 @@ function start() {
 
 function render() {
   // render game state
-  displaytimer();
+  displayTimer();
   displayRatio();
   updateCounter();
   shuffleArray();
   renderQuote();
   enableDisable();
+  endGame();
 }
 
-function displaytimer() {
+function displayTimer() {
+  // initialize timer to 20 seconds
   timeLeft = 20;
   timer = setInterval(function() {
     // Display timer in the format 'min : sec' in the timer container
@@ -101,14 +81,19 @@ function displaytimer() {
     timeLeft--;
     if(timeLeft < 0) {
       timerContainer.textContent = minutes + " : " + minutes;
-      // clearTimeout(timer)
       clearInterval(timer);
       // enable submit button
       submitBtn.disabled = false;
       // submit what's in the input field when timer hits zero
       submitBtn.click();
     }
-    //clearInterval(timer);
+    // Urge player by making timeLeft visually appealing
+    if(timeLeft < 5) {
+      timerContainer.style.color = "red";
+    } else {
+      timerContainer.style.color = "#000";
+    }
+
   }, 1000);
 }
 
@@ -118,12 +103,19 @@ function updateCounter() {
   // display updated ratio to the screen
  counterEl.textContent = `${counter} / ${totalQuestions}`;
 
-  // Store the current value of ratio for next round
-
 }
 
 function displayRatio() {
   ratioContainer.textContent = `${ratio} / ${totalQuestions}`;
+
+  // make win / loss visually appealling
+  if(ratio < (totalQuestions / 2)) {
+    ratioContainer.style.color = "#e3242b";
+  } else if(ratio > (totalQuestions / 2)) {
+    ratioContainer.style.color = "#03c04a";
+  } else{
+    ratioContainer.style.color = "#000000";
+  }
 }
 
 function shuffleArray() {
@@ -139,30 +131,18 @@ function shuffleArray() {
   shuffledArray = shuffle(arr);
   return shuffledArray;
 }
-// shuffleArray(); // -- works
 
 function renderQuote() {
   // Create an array of 10 random elements for each round
   // can just return the 10 first elements of the intitial array since they are already shuffled
   roundQuoteArr = shuffledArray.slice(0, 10);
-  // console.log(roundQuoteArr); --  works
   // randomly pick a quote for the current hand
   quote = roundQuoteArr[Math.floor(Math.random() * roundQuoteArr.length)];
-  console.log(quote);
-  // capture only the text of the quote to render to the user
-  quoteText = quote.quote;
-  // console.log(quoteText) -- works
-  // Finally, render quote to the quote container
-  quoteContainer.textContent = quoteText;
+  // Finally, render quote in the quote container
+  quoteContainer.textContent = quote.quote;
 }
-// renderQuote(); //-- works
 
 function validateAnswer() {
-
-  /*-------------- This function works ---------------*/
-
-  // Enable the submit button
-  // submitBtn.disabled = false;
 
   // make sure the answers array is not populated with empty strings
   if(userAns.value != "") {
@@ -172,16 +152,14 @@ function validateAnswer() {
   // Loop over answers and check if there's a value that matches current quote characterName
   // If yes meaning the user answer is right, increment ratio by 1.
   for(let i = 0; i < answers.length; i++) {
-    if (answers[i] === quote.characterName) {
-      console.log(answers[i])
+    if ((answers[i]).toLowerCase() === (quote.characterName).toLowerCase()) {
       ratio++;
     }
-    // ratio--;
+
+    // Render result to the user
     ratioContainer.textContent = `${ratio} / ${totalQuestions}`;
   }
-
 }
-// validateAnswer();
 
 function clearRound() {
   // clear input field and quotes container if timer hits 0 or submitBtn is clicked
@@ -190,17 +168,11 @@ function clearRound() {
   userAns.focus();
 }
 
-// console.log(renderQuote());
-
-function updatePlayBtn() {
-
-}
-
 function submit() {
+  clearInterval(timer);
   validateAnswer();
   clearRound();
   render();
-  clearInterval(timer);
 }
 
 function enableDisable(){
@@ -210,43 +182,34 @@ function enableDisable(){
     submitBtn.disabled = false;
   }
 }
-console.log(userAns);
-enableDisable();
 
-function submitAtTimer0() { 
-  //Increment counter when timer hits zero
-  updateCounter();
-  // submit answer anyway if timer hits 0
-  // if(timer < 20) submit();
+function reset() {
+  clearInterval(timer);
+  counterEl.innerHTML = "";
+  ratioContainer.innerHTML = "";
+  timerContainer.innerHTML = "";
+  quoteContainer.textContent = "";
+  userAns.value = "";
+  userAns.disabled = true;
+  submitBtn.disabled = true;
+  console.log(timerContainer);
+  resetBtn.disabled = true;
 }
 
 function endGame() {
-  // end current round if counter == totalQuestions
-
-  // clear the div body container element.
-
-  // create and display a placeholder for the images to render
-
-  // Create and display a placeholder for canvas to draw audio visualizer
-
-  // Create and display a Continue playing button to return back to the game
+  // Display results to the player
+  if(counter > 10) {
+    clearInterval(timer);
+    if(ratio < (totalQuestions / 2)) {
+      quoteContainer.style.color = "#e3242b";
+      quoteContainer.textContent = `Your score is ${ratio} / ${totalQuestions}. You are not truly a fan yet`;
+    } else if(ratio > (totalQuestions / 2)) {
+      quoteContainer.style.color = "#03c04a";
+      quoteContainer.textContent = `Your score is ${ratio} / ${totalQuestions}. You've proven you got the fandom living within you!`;
+    } else {
+      quoteContainer.textContent = `Your score is ${ratio} / ${totalQuestions}. Just one more to hone your title!`;
+    }
+  }
 
 }
 
-function continuePlaying() {
-  // happens when user clicks on continue playing button.
-
-  // Clear what is in the div body container
-
-  // Recreate the same structure before the endgame function
-}
-
-function reset() {
-  // Clear counter
-
-  // Clear ratio
-
-  // Clear timer
-
-  // Reinitializes the state of the game
-}

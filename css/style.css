@@ -14,6 +14,8 @@ body {
   height: 2130px;
   align-items: center;
   border: 5px solid #e4d00a;
+  background: rgb(36, 30, 0);
+  background: linear-gradient(90deg, rgba(74,99,150,1) 17%, rgba(0,5,36,1) 51%);
 }
 header {
   display: flex;
@@ -21,15 +23,18 @@ header {
   justify-content: flex-start;
   width: 1065px;
   height: 255px;
-  border: 3px solid white;
+  /* border: 3px solid white; */
   margin-top: 87px;
+  /* background-color: #bea7e5; */
 }
 
 #logo{
   width: 195px;
   height: 184.167px;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   margin: 35px 41px 36px 88px;
+  background: url(../assets/Asset\ 2@2x.png);
+  background-size: cover;
 }
 
 h3{
@@ -39,7 +44,8 @@ h3{
   font-weight: 700;
   line-height: 25px;
   text-transform: uppercase;
-  margin-top: 202px
+  margin-top: 195px;
+  margin-left: 130px;
 }
 
 /*
@@ -152,9 +158,9 @@ h2{
   font-family: "Jacques Francois", serif;
 }
 
-#submit-button {
+#submit-reset {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 705px;
   height: 72px; 
   margin-top: 45px;
@@ -171,10 +177,31 @@ h2{
   text-transform: uppercase;
 }
 
+#reset-btn {
+  width: 216px;
+  height: 100%;
+  font-family: "Lilita One", cursive;
+  font-size: 40px;
+  font-size: normal;
+  font-weight: 400;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
 #img-placeholder {
   width: 705px;
   height: 468px;
-  border: 3px solid white;
+  /* border: 3px solid white; */
   margin-top: 45px;
+  background: 
+    url(../assets/anime-cover\ \(3\).png),
+    url(../assets/anime-cover\ \(3\).png);
+    background-size: cover;
+    border: none;
+  /* background-blend-mode: difference; */
+  /* background-position: 
+    calc(50% - 1px) calc(50% - 1px),
+    calc(50% + 1px) calc(50% + 1px);
+  filter: brightness(20) invert(5) grayscale(20); */
 }
 

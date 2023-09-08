@@ -185,7 +185,7 @@ const quotesArr = [
     animeTitle: "Code Geass"
   },
   {
-    characterName: "Shouya Ishida",
+    characterName: "Shoya Ishida",
     quote: "Things would have been so much better back then, if we had heard each other's voices.",
     animeTitle: "A silent voice"
   },
@@ -290,12 +290,12 @@ const quotesArr = [
     animeTitle: "My Hero Academia"
   },
   {
-    characterName: "Lelouch VI Britannia",
+    characterName: "Lelouch Lamperouge",
     quote: "If the king doesnt move, then his subjects won't follow.",
     animeTitle: "Code Geass"
   },
   {
-    characterName: "Lelouch VI Britannia",
+    characterName: "Lelouch Lamperouge",
     quote: "All the hatred in the world is gathered on me, as promised. So, all you have to do is to erase my existence, and put an end to this chain of hatred. The Black Knights will have the legend of Zero left behind for them. And now the world can be unified at one table, not through military force, but through negotiation and talk.",
     animeTitle: "Code Geass"
   },
@@ -311,7 +311,7 @@ const quotesArr = [
   },
   {
     characterName: "Parona",
-    quote: "I’m not tough enough to go on living with this reality.",
+    quote: "I'm not tough enough to go on living with this reality.",
     animeTitle: "To Your Eternity"
   },
 ]
