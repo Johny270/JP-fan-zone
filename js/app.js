@@ -221,7 +221,7 @@ function endGame() {
       quoteContainer.style.color = "#fbaed2";
       quoteContainer.textContent = `Your score is ${ratio} / ${totalQuestions}. You are not truly a fan yet`;
     } else if(ratio > (totalQuestions / 2)) {
-      quoteContainer.style.color = "#03c04a";
+      quoteContainer.style.color = "#90EE90";
       quoteContainer.textContent = `Your score is ${ratio} / ${totalQuestions}. You've proven you got the fandom living within you!`;
     } else {
       quoteContainer.textContent = `Your score is ${ratio} / ${totalQuestions}. Just one more to hone your title!`;
