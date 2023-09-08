@@ -12,11 +12,26 @@ body {
   width: 1440px;
   height: 2150px;
   align-items: center;
-  background: rgb(36, 30, 0);
-  background: linear-gradient(90deg, rgba(74,99,150,1) 17%, rgba(0,5,36,1) 51%);
-  box-shadow: 2rem 2rem #5e548e, -2rem -2rem #a9cbb7;
-  box-shadow: 0 0 50px #a10702;
+  /* background: rgb(36, 30, 0);
+  background: linear-gradient(90deg, rgba(74,99,150,1) 17%, rgba(0,5,36,1) 51%); */
+  background: linear-gradient(236deg, #ae8f1b ,#117d94 , #6e42a6, #7c0f55);
+  background-size: 240% 240%;
+  animation: gradient-animation 36s ease infinite;
+  box-shadow: 0 0 50px #a9cbb7;
 }
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 header {
   display: flex;
   flex-direction: row;

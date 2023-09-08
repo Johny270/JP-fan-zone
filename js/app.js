@@ -218,7 +218,7 @@ function endGame() {
     submit.disabled = true;
     userAns.disabled = true;
     if(ratio < (totalQuestions / 2)) {
-      quoteContainer.style.color = "#e3242b";
+      quoteContainer.style.color = "#fbaed2";
       quoteContainer.textContent = `Your score is ${ratio} / ${totalQuestions}. You are not truly a fan yet`;
     } else if(ratio > (totalQuestions / 2)) {
       quoteContainer.style.color = "#03c04a";
