@@ -84,9 +84,10 @@ Enable or Disable Button based on condition using JavaScript ](https://www.aspsn
 - [ ] Implement answers forgiveness, meaning if the user only enters the character first name, or only the character last name, the validation returns true
 - [ ] Implement audio visualizer for sound
 - [ ] Display anime image that matches the current quote
-- [ ] play anime song that matches the current image and quote.
-- [ ] quit game option
-- [ ] exit screen for when the user quit the game, with the option to go back to the game
+- [ ] Play anime song that matches the current image and quote.
+- [ ] Quit game option
+- [ ] Exit screen for when the user quit the game, with the option to go back to the game
+- [ ] Implement media queries for mobile viewports.
 
 ## AUTHOR
 
