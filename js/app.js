@@ -215,6 +215,7 @@ function endGame() {
   // Display results to the player
   if(counter > 10) {
     clearInterval(timer);
+    submit.disabled = true;
     if(ratio < (totalQuestions / 2)) {
       quoteContainer.style.color = "#e3242b";
       quoteContainer.textContent = `Your score is ${ratio} / ${totalQuestions}. You are not truly a fan yet`;
