@@ -207,7 +207,6 @@ function reset() {
   userAns.value = "";
   userAns.disabled = true;
   submitBtn.disabled = true;
-  console.log(timerContainer);
   resetBtn.disabled = true;
 }
 
