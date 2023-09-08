@@ -81,7 +81,7 @@ Enable or Disable Button based on condition using JavaScript ](https://www.aspsn
 - [x] Handle song
 - [x] Display favicon
 - [ ] make sure the same question is never asked twice during a round of 10
-- [ ] Implement answers forgiveness, meaning if the user only enter the character first name, or only the character last name, the validation returns true
+- [ ] Implement answers forgiveness, meaning if the user only enters the character first name, or only the character last name, the validation returns true
 - [ ] Implement audio visualizer for sound
 - [ ] Display anime image that matches the current quote
 - [ ] play anime song that matches the current image and quote.
