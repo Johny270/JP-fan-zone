@@ -1,21 +1,21 @@
 body {
   display: flex;
   flex-direction: column;
-  /* flex-flow: column nowrap */
-  background-color: black;
+  background-color: #ff9f1c;
   color: white;
-  /* justify-content: center; */
   align-items: center;
 }
+
 #body-container {
   display: flex;
   flex-flow: column nowrap;
   width: 1440px;
-  height: 2130px;
+  height: 2150px;
   align-items: center;
-  border: 5px solid #e4d00a;
   background: rgb(36, 30, 0);
   background: linear-gradient(90deg, rgba(74,99,150,1) 17%, rgba(0,5,36,1) 51%);
+  box-shadow: 2rem 2rem #5e548e, -2rem -2rem #a9cbb7;
+  box-shadow: 0 0 50px #a10702;
 }
 header {
   display: flex;
@@ -23,16 +23,13 @@ header {
   justify-content: flex-start;
   width: 1065px;
   height: 255px;
-  /* border: 3px solid white; */
   margin-top: 87px;
-  /* background-color: #bea7e5; */
 }
 
 #logo{
   width: 195px;
   height: 184.167px;
-  /* border: 2px solid white; */
-  margin: 35px 41px 36px 88px;
+  margin: 35px 10px 36px 175px;
   background: url(../assets/Asset\ 2@2x.png);
   background-size: cover;
 }
@@ -45,21 +42,8 @@ h3{
   line-height: 25px;
   text-transform: uppercase;
   margin-top: 195px;
-  margin-left: 130px;
+  margin-left: 82px;
 }
-
-/*
-#sections-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 165px;
-  height: 1634px;
-}
-section {
-  border: 3px solid white;
-}
-*/
 
 #instructions {
   display: flex;
@@ -67,9 +51,10 @@ section {
   align-items: center;
   width: 705px;
   height: 251px;
-  border: 2px solid white;
+  border: 3px solid #e4d00a;
   margin-top: 24px;
 }
+
 h2{
   font-family: "Jacques Francois", serif;
   font-size: 40px;
@@ -89,6 +74,11 @@ h2{
   line-height: 35px;
   text-transform: uppercase;
   margin-top: 116px;
+}
+
+#play-btn:hover{
+  background-color: #9acd32;
+  color: #c80815;
 }
 
 #labels {
@@ -134,7 +124,7 @@ h2{
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid white;
+  border: 3px solid #e4d00a;
   width: 705px;
   height: 251px;
   margin-top: 28px;
@@ -154,7 +144,6 @@ h2{
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
-  /* text-transform: lowercase; */
   font-family: "Jacques Francois", serif;
 }
 
@@ -177,6 +166,11 @@ h2{
   text-transform: uppercase;
 }
 
+#submit-btn:hover{
+  background-color: #f77f00;
+  color: #77dd77;
+}
+
 #reset-btn {
   width: 216px;
   height: 100%;
@@ -188,20 +182,19 @@ h2{
   text-transform: uppercase;
 }
 
+#reset-btn:hover{
+  background-color: #c80815;
+  color: #9acd32;
+}
+
 #img-placeholder {
   width: 705px;
   height: 468px;
-  /* border: 3px solid white; */
   margin-top: 45px;
   background: 
     url(../assets/anime-cover\ \(3\).png),
     url(../assets/anime-cover\ \(3\).png);
     background-size: cover;
     border: none;
-  /* background-blend-mode: difference; */
-  /* background-position: 
-    calc(50% - 1px) calc(50% - 1px),
-    calc(50% + 1px) calc(50% + 1px);
-  filter: brightness(20) invert(5) grayscale(20); */
 }
 
