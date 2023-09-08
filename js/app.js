@@ -44,7 +44,7 @@ function start() {
 
   quoteContainer.style.color = "#ffffff";
   resetBtn.disabled = false;
-
+  playBtn.disabled = true;
   // activate input field and disable submitBtn
   userAns.disabled = false;
   submitBtn.disabled = false;
@@ -183,6 +183,7 @@ function submit() {
   validateAnswer();
   pauseSound();
   clearRound();
+  clearInterval(timer);
   render();
 }
 
@@ -205,6 +206,7 @@ function reset() {
   userAns.disabled = true;
   submitBtn.disabled = true;
   resetBtn.disabled = true;
+  playBtn.disabled = false;
 }
 
 function endGame() {
