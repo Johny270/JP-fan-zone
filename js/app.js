@@ -182,7 +182,6 @@ function clearRound() {
 function submit() {
   validateAnswer();
   pauseSound();
-  clearInterval(timer);
   clearRound();
   render();
 }
