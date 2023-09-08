@@ -1,3 +1,5 @@
+![Japanime fan zone screenshot](./assets/Screenshot%202023-09-08%20134844.png)
+
 # Japanime Fan Zone !
 
 ***
