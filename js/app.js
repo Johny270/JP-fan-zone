@@ -49,7 +49,8 @@ function start() {
   userAns.disabled = false;
   submitBtn.disabled = false;
 
-  // initialize ratio to 0 and counter to 0
+  // initialize ratio to 0 and counter to 0 and answer array to be empty
+  answers = [];
   counter = 0;
   ratio = 0;
 
@@ -215,6 +216,7 @@ function endGame() {
     clearInterval(timer);
     submit.disabled = true;
     userAns.disabled = true;
+    pauseSound();
     if(ratio < (totalQuestions / 2)) {
       quoteContainer.style.color = "#fbaed2";
       quoteContainer.textContent = `Your score is ${ratio} / ${totalQuestions}. You are not truly a fan yet`;
