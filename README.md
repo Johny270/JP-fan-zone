@@ -4,7 +4,7 @@
 
 ***
 
-JP Fan Zone is an online quiz platform dedicated to everything Japan animation-related. It is the place to go to test how much of a fan you truly are when it comes to Japanimation. This game saw the light of the day because of an intention to spread and share the japanimation passion between those who feel like they belong to such a community. The author of the project himself is a great admirer of the artistry of japanese people when it comes to story-telling, art, and animation. The game renders a series of quotes for which the player/user must correctly guess the author to see their score increase.
+JP Fan Zone is an online quiz platform dedicated to everything Japan animation-related. It is the place to go to test how much of a fan you truly are when it comes to Japanimation. This game saw the light of the day because of an intention to spread and share the japanimation passion between those who feel like they belong to such a community. The author of the project himself is a great admirer of the artistry of Japanese people when it comes to story-telling, art, and animation. The game renders a series of quotes for which the player/user must correctly guess the author to see their score increase.
 
 ## Getting Started
 
@@ -64,7 +64,7 @@ The fonts in this game all come from [Google Fonts](https://fonts.google.com/) a
 Enable or Disable Button based on condition using JavaScript ](https://www.aspsnippets.com/Articles/Enable-or-Disable-Button-based-on-condition-using-JavaScript.aspx)
     - [HTMLElement: input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
 
-## Techonologies used
+## Technologies used
 
 ***
 
