@@ -2,95 +2,117 @@ const animeInfo = [
 
   {
     authorName: "Hajime Issayama",
-    animeTitle: "Attack on Titans",
+    mangaTitle: "Attack on Titans",
     date: 2009, 
   },
   {
     authorName: "Masashi Kishimoto",
-    animeTitle: "Naruto",
+    mangaTitle: "Naruto",
     date: 1999, 
   },
   {
     authorName: "Akira Toriyama",
-    animeTitle: "Dragon Ball",
+    mangaTitle: "Dragon Ball",
     date: 1984, 
   },
   {
     authorName: "Eichiro Oda",
-    animeTitle: "One Piece",
+    mangaTitle: "One Piece",
     date: 1997, 
   },
   {
     authorName: "Tite Kubo",
-    animeTitle: "Bleach",
+    mangaTitle: "Bleach",
     date: 2001, 
   },
   {
     authorName: "Sui Ishida",
-    animeTitle: "Tokyo Ghoul",
+    mangaTitle: "Tokyo Ghoul",
     date: 2011, 
   },
   {
     authorName: "Takeshi Obata & Tsugumi Obha",
-    animeTitle: "Bakuman",
+    mangaTitle: "Bakuman",
     date: 2008, 
   },
   {
     authorName: "Takeshi Obata & Tsugumi Obha",
-    animeTitle: "Death Note",
+    mangaTitle: "Death Note",
     date: 2003, 
   },
   {
     authorName: "Takehiko Inoue",
-    animeTitle: "Vagabond",
+    mangaTitle: "Vagabond",
     date: 19998, 
   },
   {
     authorName: "Takehiko Inoue",
-    animeTitle: "Slam Dunk",
+    mangaTitle: "Slam Dunk",
     date: 1991, 
   },
   {
     authorName: "Gege Akutami",
-    animeTitle: "Jujutsu Kaisen",
+    mangaTitle: "Jujutsu Kaisen",
     date: 2018, 
   },
   {
     authorName: "Hirohiko Araki",
-    animeTitle: "Jojo Bizarre Adventures",
+    mangaTitle: "Jojo Bizarre Adventures",
     date: 1987, 
   },
   {
     authorName: "Yoshitoki Oima",
-    animeTitle: "A silent voice",
+    mangaTitle: "A silent voice",
     date: 2011, 
   },
   {
     authorName: "Junji Ito",
-    animeTitle: "Uzumaki",
+    mangaTitle: "Uzumaki",
     date: 2010, 
   },
   {
     authorName: "Junji Ito",
-    animeTitle: "No longer Human",
+    mangaTitle: "No longer Human",
     date: 2019, 
   },
   {
     authorName: "Yoichi Takahashi",
-    animeTitle: "Captain Tsubasa",
+    mangaTitle: "Captain Tsubasa",
     date: 1981, 
   },
   {
     authorName: "Kazuki Takahashi",
-    animeTitle: "Yugi-OH",
+    mangaTitle: "Yugi-OH",
     date: 1996, 
   },
   {
     authorName: "Kafka Asagiri",
-    animeTitle: "Bungou Stray Dogs",
+    mangaTitle: "Bungou Stray Dogs",
     date: 2012, 
   },
 ]
 
-animeInfo[0].image = "../assets/anime-cover (3).jpg";
-console.log(animeInfo[0]);
+animeInfo[0].image = "../assets/guess-title-imgs/attackOnTitans.png";
+animeInfo[1].image = "../assets/guess-title-imgs/naruto.png";
+animeInfo[2].image = "../assets/guess-title-imgs/dragonBall.png";
+animeInfo[3].image = "../assets/guess-title-imgs/onePiece";
+animeInfo[4].image = "../assets/guess-title-imgs/bleach.png";
+animeInfo[5].image = "../assets/guess-title-imgs/tokyoGhoul";
+animeInfo[6].image = "../assets/guess-title-imgs/bakuman.png";
+animeInfo[7].image = "../assets/guess-title-imgs/deathNote.png";
+animeInfo[8].image = "../assets/guess-title-imgs/vagabond.png";
+animeInfo[9].image = "../assets/guess-title-imgs/slamDunk.png";
+animeInfo[10].image = "../assets/guess-title-imgs/jjk.png";
+animeInfo[11].image = "../assets/guess-title-imgs/jojo.png";
+animeInfo[12].image = "../assets/guess-title-imgs/aSilentVoice.png";
+animeInfo[13].image = "../assets/guess-title-imgs/NLH-uzumaki.png";
+animeInfo[14].image = "../assets/guess-title-imgs/NLH-uzumaki.png";
+animeInfo[15].image = "../assets/guess-title-imgs/captainTsubasa.png";
+animeInfo[16].image = "../assets/guess-title-imgs/yugioh.png";
+animeInfo[17].image = "../assets/guess-title-imgs/bungouStrayDogs.png";
+
+
+
+export {
+  animeInfo
+}

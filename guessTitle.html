@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/guessTitle.css">
-  <script defer src="./js/authors.js"></script>
+  <script src="./js/guessTitle.js" type="module"></script>
   <title>Document</title>
 </head>
 <body>
@@ -17,6 +17,19 @@
       <h1>Guess the title.</h1>
     </div>
     <button id="play-btn">PLAY</button>
+    <di id="question-container"></di>
+    <di id="timer-score">
+      <div id="score">Score</div>
+      <div id="timer">Timer</div>
+    </di>
+    <div id="options">
+      <div id="option1"></div>
+      <div id="option2"></div>
+    </div>
+    <div id="submit-reset">
+      <button id="submit">Submit</button>
+      <button id="reset">Reset</button>
+    </div>
   </div>
 </body>
 </html>
