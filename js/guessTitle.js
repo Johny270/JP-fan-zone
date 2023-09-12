@@ -9,7 +9,6 @@ let timeLeft;
 let timer;
 let question;
 let answer;
-let options = [];
 let shuffledOptions;
 let optionsContainer = [];
 
@@ -17,61 +16,73 @@ let optionsContainer = [];
 
 /*------------ Cached Elements References ------------*/
 const playBtn = document.querySelector("#play-btn");
-// console.log(playBtn);
 const questionEl = document.querySelector("#question-container");
-// console.log(question);
 const scoreEl = document.querySelector("#score");
-// console.log(scoreEl);
 const timerEl = document.querySelector("#timer");
-// console.log(timer);
 const option1 = document.querySelector("#option1");
-// console.log(option1);
 const option2 = document.querySelector("#option2");
-// console.log(option2);
-const submitBtn = document.querySelector("#submit");
-// console.log(submitBtn);
 const resetBtn = document.querySelector("#reset");
-// console.log(resetBtn);
+const exitBtn = document.querySelector("#quit");
+const imageContainer = document.querySelector("#imageContainer");
+const actualImage = document.querySelector("#actualImage")
 
 /*------------ Event Listeners ------------*/
 option1.addEventListener("click", validateAnswer);
 option2.addEventListener("click", validateAnswer);
+playBtn.addEventListener("click", play);
+resetBtn.addEventListener("click", reset);
+
 
 /*------------ Functions ------------*/
 
 optionsContainer.push(option1);
 optionsContainer.push(option2);
+timerEl.style.color = "white";
+hideElements()
+
+function play() {
+  score = 0;
+  showElements();
+  render();
+  playBtn.disabled = true;
+}
+
+function render() {
+  displayScore();
+  displayTimer();
+  shuffleOptions();
+  displayQuestion();
+  displayOptions();
+  displayImage();
+}
 
 function displayScore() {
-  score = 1;
   scoreEl.textContent = `${score}`
 }
-// displayScore() -- works
 
 function displayTimer() {
-  timeLeft = 10;
+  timeLeft = 40;
   timer = setInterval(function() {  
     // Display timer in the format 'min : sec' in the timer container
     timerEl.textContent = minutes + " : " + `${timeLeft}`;
     timeLeft--;
     if(timeLeft < 0) {
-      timerEl.textContent = minutes + " : " + minutes;
       clearInterval(timer);
-      // enable submit button
-      // submitBtn.disabled = false;
-      // submit what's in the input field when timer hits zero
-      // submitBtn.click();
+      timerEl.textContent = minutes + " : " + minutes;
+      
+      printResults();
     }
+
     // Urge player by making timeLeft visually appealing
     if(timeLeft < 5) {
       timerEl.style.color = "red";
     } else {
-      timerEl.style.color = "#000";
+      timerEl.style.color = "#fff";
     }
 
   }, 1000);
 }
-// displayTimer() -- works
+
 function shuffleOptions() {
   const shuffle = (array) => {
     for(let i = array.length - 1; i > 0; i--) {
@@ -84,18 +95,12 @@ function shuffleOptions() {
   return shuffledOptions;
 }
 
-// shuffleOptions()
-
-// console.log(shuffledOptions)
 
 function displayQuestion() {
-  // options = shuffledOptions.slice(0, 2);
   question = shuffledOptions[Math.floor(Math.random() * shuffledOptions.length)];
   questionEl.textContent = `I am "${question.authorName}" and I drew ...`;
 }
-shuffleOptions()
-displayQuestion()
-console.log(options);
+
 
 function displayOptions() {
   optionsContainer[Math.floor(Math.random() * optionsContainer.length)].textContent = question.mangaTitle
@@ -106,18 +111,71 @@ function displayOptions() {
   }
 }
 
-
-// shuffleOptions()
-// displayQuestion()
-// displayOptions()
-// console.log(optionsContainer)
-// optionsContainer[Math.floor(Math.random() * optionsContainer.length)].textContent = question;  -- very important.
-function validateAnswer() {
-  
- console.log("was clicked");
+function renderNextQuestions() {
+  shuffleOptions();
+  displayQuestion();
+  displayOptions();
+  displayImage();
 }
-displayScore()
-shuffleOptions()
-displayQuestion()
-displayOptions()
-// validateAnswer()
+
+function displayImage() {
+  actualImage.setAttribute("src", question.image);
+  imageContainer.style.backgroundImage = actualImage;
+}
+// render()
+// displayImage()
+// console.log(actualImage);
+
+function validateAnswer(event) {
+  answer = event.currentTarget.textContent;
+  if (answer === question.mangaTitle) score++
+  option1.textContent = "";
+  option2.textContent = "";
+  renderNextQuestions();
+  displayScore()
+}
+
+function printResults() {
+  if(score < 5) {
+    clearInterval(timer);
+    questionEl.textContent = "";
+    questionEl.textContent = `You scored ${score} which is less than 5, you loose!`;
+  }
+  if(score > 5) {
+    questionEl.textContent = "";
+    questionEl.textContent = `You scored ${score} which is above 5, you win!`;
+  }
+}
+
+function reset() {
+  clearInterval(timer);
+  questionEl.textContent = "";
+  scoreEl.textContent = "";
+  timerEl.textContent = "";
+  option1.textContent = "";
+  option2.textContent = ""
+  hideElements();
+  playBtn.disabled = false;
+}
+
+function hideElements() {
+  questionEl.hidden = true;
+  scoreEl.hidden = true;
+  timerEl.hidden = true;
+  option1.hidden = true;
+  option2.hidden = true;
+  exitBtn.hidden = true;
+  resetBtn.hidden = true;
+}
+
+function showElements() {
+  questionEl.hidden = false;
+  scoreEl.hidden = false;
+  timerEl.hidden = false;
+  option1.hidden = false;
+  option2.hidden = false;
+  exitBtn.hidden = false;
+  resetBtn.hidden = false;
+}
+
+// imageContainer.style.backgroundImage = ""
