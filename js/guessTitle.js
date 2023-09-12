@@ -69,7 +69,6 @@ function displayTimer() {
     if(timeLeft < 0) {
       clearInterval(timer);
       timerEl.textContent = minutes + " : " + minutes;
-      
       printResults();
     }
 
@@ -166,6 +165,7 @@ function hideElements() {
   option2.hidden = true;
   exitBtn.hidden = true;
   resetBtn.hidden = true;
+  imageContainer.hidden = true;
 }
 
 function showElements() {
@@ -176,6 +176,7 @@ function showElements() {
   option2.hidden = false;
   exitBtn.hidden = false;
   resetBtn.hidden = false;
+  imageContainer.hidden = false;
 }
 
 // imageContainer.style.backgroundImage = ""

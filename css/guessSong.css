@@ -1,0 +1,91 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #ff9f1c;
+  color: white;
+  align-items: center;
+}
+
+#body-container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 1440px;
+  height: 2150px;
+  align-items: center;
+  /* background: rgb(36, 30, 0);
+  background: linear-gradient(90deg, rgba(74,99,150,1) 17%, rgba(0,5,36,1) 51%); */
+  background: linear-gradient(236deg, #ae8f1b ,#117d94 , #6e42a6, #7c0f55);
+  background-size: 240% 240%;
+  animation: gradient-animation 36s ease infinite;
+  box-shadow: 0 0 50px #a9cbb7;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 1065px;
+  height: 255px;
+  margin-top: 87px;
+  border: 3px solid white;
+}
+
+#play-btn{
+  width: 216px;
+  height: 72px;
+  font-family: "Lilita One", cursive;
+  font-size: 40px;
+  font-size: normal;
+  font-weight: 400;
+  line-height: 35px;
+  text-transform: uppercase;
+  margin-top: 116px;
+}
+
+#instructions {
+  width: 540px;
+  height: 93px;
+  border: 3px solid white;
+  margin-top: 85px;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 255px;
+  height: 385px;
+  margin-top: 53px;
+}
+
+#options > * {
+  width: 255px;
+  height: 93px;
+  border: 3px solid white;
+}
+
+#exit-reset {
+  display: flex;
+  justify-content: space-between;
+  width: 540px;
+  height: 93px;
+  margin-top: 53px;
+}
+
+#exit-reset > * {
+  width: 255px;
+  height: 93px;
+  border: 3px solid white;
+}
