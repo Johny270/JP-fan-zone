@@ -123,9 +123,6 @@ function displayImage() {
   actualImage.setAttribute("src", question.image);
   imageContainer.style.backgroundImage = actualImage;
 }
-// render()
-// displayImage()
-// console.log(actualImage);
 
 function validateAnswer(event) {
   answer = event.currentTarget.textContent;
@@ -172,5 +169,3 @@ function showElements() {
   resetBtn.hidden = false;
   imageContainer.hidden = false;
 }
-
-// imageContainer.style.backgroundImage = ""
