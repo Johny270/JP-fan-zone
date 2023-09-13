@@ -10,8 +10,7 @@ JP Fan Zone is an online quiz platform dedicated to everything Japan animation-r
 
 ***
 
-## Please visit [Japanine Fan-Zone web page](https://jp-fan-zone.netlify.app/) to play.
-# Use the logo to go back to category selection
+# Please visit [Japanine Fan-Zone web page](https://jp-fan-zone.netlify.app/main) to play.
 - Find the link the my [planning material](https://docs.google.com/document/d/1Ks2oQGX5u9JOMiniqU32IdVzj9eyhaRH/edit) here.
 
 > ### How to Play:
