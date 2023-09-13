@@ -1,29 +1,64 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #000;
+  background-color: #3B444B;
   color: white;
   align-items: center;
-
 }
 
 #body-container {
   display: flex;
   flex-flow: column nowrap;
   width: 1440px;
-  height: 2150px;
+  height: 2000px;
   align-items: center;
-  border: 3px solid yellow;
+  /* background: rgb(36, 30, 0);
+  background: linear-gradient(90deg, rgba(74,99,150,1) 17%, rgba(0,5,36,1) 51%); */
+  background: linear-gradient(236deg, #ae8f1b ,#117d94 , #6e42a6, #7c0f55);
+  background-size: 240% 240%;
+  animation: gradient-animation 36s ease infinite;
+  box-shadow: 0 0 50px #a9cbb7;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 header {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   width: 1065px;
   height: 255px;
   margin-top: 87px;
-  border: 2px solid white;
+  border: 3px solid #fff;
+  background-color: #117d94;
+}
+
+#play-btn {
+  width: 216px;
+  height: 72px;
+  font-family: "Lilita One", cursive;
+  font-size: 40px;
+  font-size: normal;
+  font-weight: 400;
+  line-height: 35px;
+  text-transform: uppercase;
+  margin-top: 116px;
+  outline: none;
+}
+
+#play-btn:hover {
+  background-color: #9acd32;
+  color: #c80815;
 }
 
 #instructions {
@@ -36,19 +71,16 @@ header {
   margin-top: 24px;
 }
 
-#play-btn{
-  width: 216px;
-  height: 72px;
-  font-family: "Lilita One", cursive;
-  font-size: 40px;
-  font-size: normal;
-  font-weight: 400;
-  line-height: 35px;
-  text-transform: uppercase;
-  margin-top: 116px;
-}
 
 #question-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Jacques Francois", serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
   width: 540px;
   height: 93px;
   margin-top: 38px;
@@ -66,10 +98,19 @@ header {
 }
 
 #timer-score > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 216px;
   height: 72px;
-  border: 2px solid white;
-  color: #fff;
+  background-color: white;
+  border-radius: 4px;
+  color: black;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Jacques Francois", serif;
+  line-height: 35px;
 }
 
 #options{
@@ -82,9 +123,24 @@ header {
 }
 
 #options > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 216px;
   height: 72px;
   border: 2px solid white;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Jacques Francois", serif;
+  line-height: 35px;
+  box-shadow: 10px 25px 20px rgba(190, 10, 181, 0.2);
+  background-color: #117d94;
+}
+
+#options > *:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 
@@ -93,15 +149,43 @@ header {
   flex-direction: column;
   justify-content: space-between;
   width: 216px;
-  height: 200px;
+  height: 185px;
   margin-top: 38px;
-  /* border: 3px solid white; */
 }
 
 #submit-reset > * {
   width: 216px;
   height: 72px;
+  color: #3B444B;
   /* border: 2px solid white; */
+}
+
+#reset {
+  font-family: "Lilita One", cursive;
+  font-size: 40px;
+  font-size: normal;
+  font-weight: 400;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+#reset:hover{
+  background-color: #f77f00;
+  color: #77dd77;
+}
+
+#quit {
+  font-family: "Lilita One", cursive;
+  font-size: 40px;
+  font-size: normal;
+  font-weight: 400;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+#quit:hover{
+  background-color: #c80815;
+  color: #9acd32;
 }
 
 #imageContainer {

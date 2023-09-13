@@ -58,6 +58,8 @@ function render() {
 
 function displayScore() {
   scoreEl.textContent = `${score}`
+  scoreEl.style.color = "red";
+  if(score > 5) scoreEl.style.color = "#03c04a";
 }
 
 function displayTimer() {
@@ -76,7 +78,7 @@ function displayTimer() {
     if(timeLeft < 5) {
       timerEl.style.color = "red";
     } else {
-      timerEl.style.color = "#fff";
+      timerEl.style.color = "#000";
     }
 
   }, 1000);
@@ -97,7 +99,7 @@ function shuffleOptions() {
 
 function displayQuestion() {
   question = shuffledOptions[Math.floor(Math.random() * shuffledOptions.length)];
-  questionEl.textContent = `I am "${question.authorName}" and I drew ...`;
+  questionEl.textContent = `"${question.authorName}" drew ... ?`;
 }
 
 
@@ -139,10 +141,12 @@ function printResults() {
     clearInterval(timer);
     questionEl.textContent = "";
     questionEl.textContent = `You scored ${score} which is less than 5, you loose!`;
+    questionEl.style.color = "#fbaed2";
   }
   if(score > 5) {
     questionEl.textContent = "";
     questionEl.textContent = `You scored ${score} which is above 5, you win!`;
+    questionEl.style.color = "#90EE90";
   }
 }
 
@@ -158,22 +162,12 @@ function reset() {
 }
 
 function hideElements() {
-  questionEl.hidden = true;
-  scoreEl.hidden = true;
-  timerEl.hidden = true;
-  option1.hidden = true;
-  option2.hidden = true;
   exitBtn.hidden = true;
   resetBtn.hidden = true;
   imageContainer.hidden = true;
 }
 
 function showElements() {
-  questionEl.hidden = false;
-  scoreEl.hidden = false;
-  timerEl.hidden = false;
-  option1.hidden = false;
-  option2.hidden = false;
   exitBtn.hidden = false;
   resetBtn.hidden = false;
   imageContainer.hidden = false;
