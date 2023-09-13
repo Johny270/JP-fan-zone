@@ -39,10 +39,11 @@ header {
   width: 1065px;
   height: 255px;
   margin-top: 87px;
-  border: 3px solid white;
+  border: 3px solid #fff;
+  background-color: #117d94;
 }
 
-#play-btn{
+#play-btn {
   width: 216px;
   height: 72px;
   font-family: "Lilita One", cursive;
@@ -52,12 +53,29 @@ header {
   line-height: 35px;
   text-transform: uppercase;
   margin-top: 116px;
+  outline: none;
 }
 
+#play-btn:hover {
+  background-color: #9acd32;
+  color: #c80815;
+}
+
+
 #instructions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid white;
+  text-align: center;
+  font-family: "Jacques Francois", serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
   width: 540px;
   height: 93px;
-  border: 3px solid white;
+  border: 3px solid #e4d00a;
   margin-top: 85px;
 }
 
@@ -71,9 +89,25 @@ header {
 }
 
 #options > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 255px;
   height: 93px;
   border: 3px solid white;
+  text-align: center;
+  font-family: "Jacques Francois", serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
+  box-shadow: 10px 25px 20px rgba(190, 10, 181, 0.2);
+  background-color: #117d94;
+}
+
+#options > *:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 #exit-reset {
@@ -86,6 +120,33 @@ header {
 
 #exit-reset > * {
   width: 255px;
-  height: 93px;
-  border: 3px solid white;
+  height: 72px;
+}
+
+#reset {
+  font-family: "Lilita One", cursive;
+  font-size: 40px;
+  font-size: normal;
+  font-weight: 400;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+#reset:hover{
+  background-color: #f77f00;
+  color: #77dd77;
+}
+
+#exit {
+  font-family: "Lilita One", cursive;
+  font-size: 40px;
+  font-size: normal;
+  font-weight: 400;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+#exit:hover{
+  background-color: #c80815;
+  color: #9acd32;
 }

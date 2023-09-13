@@ -33,8 +33,13 @@ options.push(option1);
 options.push(option2);
 options.push(option3);
 
+resultContainer.textContent = "SELECT THE CORRECT SONG OPTION";
+
 function play() {
+  resultContainer.textContent = "";
   render();
+  playBtn.disabled = true;
+  resetBtn.disabled = false;
 }
 
 function render() {
@@ -74,8 +79,10 @@ function printResults(evt) {
   timer = setInterval(function() {  
     if(evt.target.textContent === song.songTitle){
       resultContainer.textContent = "CORRECT !";
+      resultContainer.style.color = "#90EE90";
     } else {
       resultContainer.textContent = "WRONG !";
+      resultContainer.style.color = "#fbaed2";
     }
     timeLeft--;
     if(timeLeft < 0) {
@@ -95,6 +102,7 @@ function reset() {
   option2.textContent = "";
   option3.textContent = "";
   playBtn.disabled = false;
+  resetBtn.disabled = true;
 }
 
 
